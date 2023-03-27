@@ -7,7 +7,6 @@ async function loadModel() {
     tokenizerUrl: 'https://cdn.jsdelivr.net/npm/@tensorflow-models/gpt-3/wordpiece/',
   });
 
-  // 모델 사용 예시
   const prompt = 'The quick brown fox';
   const length = 10;
   const temperature = 0.5;
