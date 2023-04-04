@@ -8,18 +8,17 @@ function App() {
   const [chat, setChat] = useState(["안녕하세요"]);
   const [output, setOutput] = useState("");
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   
   
   const handleSendClick = () => {
     
-
     let copy = [...chat];
     copy.push(input);
     setChat(copy);
-
+    
     openai
       .createCompletion({
         model: "text-davinci-003",
@@ -31,21 +30,21 @@ function App() {
         presence_penalty: 0,
       })
       .then((result) => {
-        
+        copy=[...copy];
         copy.push(result.data.choices[0].text);
         setChat(copy);
-        let copyreRender = [...reRender];
-        copyreRender = [''];
-        setReRender(copyreRender);
-        copyreRender.pop();
+        // let copyreRender = [...reRender];
+        // copyreRender = [''];
+        // setReRender(copyreRender);
+        // copyreRender.pop();
       });
       
   };
 
-  useEffect(() => { // chat의 내용을 재랜더링을 하기위해 만든 useEffect()
-    let copy = [...chat]
-    setChat(copy);
-  }, [reRender]); 
+  // useEffect(() => { // chat의 내용을 재랜더링을 하기위해 만든 useEffect()
+  //   let copy = [...chat]
+  //   setChat(copy);
+  // }, [reRender]); 
 
   return (
     <div className="App">
