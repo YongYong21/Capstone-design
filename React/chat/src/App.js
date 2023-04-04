@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect, useRef } from "react";
-const { Configuration, OpenAIApi } = require("openai");
+import { Configuration, OpenAIApi } from "openai";
+// const { Configuration, OpenAIApi } = require("openai");
 
 function App() {
   const [input, setInput] = useState("");
@@ -8,10 +9,30 @@ function App() {
   const [chat, setChat] = useState(["안녕하세요"]);
   const [output, setOutput] = useState("");
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   
+  // useEffect(() => {
+  //   openai.fineTunes.create({
+  //     model: "text-davinci-003",
+  //     positiveExamples: [
+  //       ["Hello, how are you?"],
+  //       ["I'm doing great, thanks for asking. How about you?"],
+  //     ],
+  //     negativeExamples: [
+  //       ["I hate it when people are rude."],
+  //       ["I'm allergic to strawberries."],
+  //     ],
+  //   })
+  //   .then((result) => {
+  //     console.log(result);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+  // }, []);
+
   
   const handleSendClick = () => {
     
