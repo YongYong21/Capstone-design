@@ -13,25 +13,6 @@ function App() {
   });
   const openai = new OpenAIApi(configuration);
   
-  // useEffect(() => {
-  //   openai.fineTunes.create({
-  //     model: "text-davinci-003",
-  //     positiveExamples: [
-  //       ["Hello, how are you?"],
-  //       ["I'm doing great, thanks for asking. How about you?"],
-  //     ],
-  //     negativeExamples: [
-  //       ["I hate it when people are rude."],
-  //       ["I'm allergic to strawberries."],
-  //     ],
-  //   })
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
-  // }, []);
 
   
   const handleSendClick = () => {
